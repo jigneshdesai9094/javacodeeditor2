@@ -1,0 +1,7 @@
+Courses with points:
+1.Math:
+credit hours- 4
+point - 4.0
+2.Sceince:
+credit hours- 5
+point - 3.5

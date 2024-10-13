@@ -1,0 +1,11 @@
+fh = open("test.txt","a+")
+fh.seek(0)
+line = fh.readline()
+
+ind = line.index("gujarat")
+print(ind)
+fh.seek(0)
+fh.seek(ind)
+print(fh.tell())
+fh.write("Gujarat Vidyapith")
+fh.close()
