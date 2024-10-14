@@ -302,15 +302,20 @@ public class MyFrame extends JFrame implements KeyListener, ActionListener {
             if (directory.equals("None")) {
                 saveAs();
             } else {
-                // Get the command processor path
+              // Get the command processor path
                 String comSpec = System.getenv("ComSpec");
                 System.out.println(comSpec);
                 // Create a new process builder
                 ProcessBuilder builder = new ProcessBuilder(comSpec,"/c","start");
 
-                System.out.println(directory);
+
                 builder.directory(new File(directory));
-                builder.start();
+
+                System.out.println(directory);
+                Process process = builder.start();
+                int exitCode = process.waitFor();
+                                
+                System.out.println("Process exited with code: " + exitCode);
             }
         } catch (Exception e) {
             e.printStackTrace();
